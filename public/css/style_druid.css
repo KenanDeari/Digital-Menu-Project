@@ -16,13 +16,13 @@ html {
    font-size: 10px;
 }
 
-h1, h2 {
+h1, h2, h3 {
    font-family: 'Cabin', sans-serif;
    letter-spacing: 0.15rem;
    line-height: 1.25;
 }
 
-h3, h4, p, a {
+p, a {
    font-family: 'Aleo', serif;
    letter-spacing: 0.15rem;
    line-height: 1.5;
@@ -157,6 +157,7 @@ nav {
    font-size: 2.5rem;
 }
 
+/* Facts ------------------------------- */
 .facts {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -168,6 +169,25 @@ nav {
 .facts img {
    width: 100%;
    border-radius: 1rem;
+}
+
+/* News -------------------------------- */
+.news {
+   background-color: var(--dr);
+   color: var(--wt);
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 5rem;
+   text-align: center;
+   padding: 5rem;
+}
+
+.news i {
+   margin-bottom: 2rem;
+}
+
+.news h3 {
+   margin-bottom: 2rem;
 }
 
 /* FOOTER */
@@ -236,8 +256,6 @@ footer {
    }
 
    .photo-slide {
-      background-size: cover;
-
       max-height: 100vh;
       overflow: hidden;
       position: relative;
