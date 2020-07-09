@@ -13,6 +13,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
+  // app.get("/index")
+
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
