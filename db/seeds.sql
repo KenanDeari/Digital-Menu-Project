@@ -123,3 +123,33 @@ VALUES
     "?",
     2),
 
+    ("Desserts",
+    "Alfajor",
+    "?",
+    3),
+
+    ("Desserts",
+    "Crema Volteada",
+    "?",
+    3),
+
+    ("Desserts",
+    "Pionono",
+    "?",
+    3),
+
+    ("Desserts",
+    "Torta Helada",
+    "?",
+    3),
+
+    ("Desserts",
+    "Milhojas",
+    "?",
+    3),
+
+    ("Desserts",
+    "Leche Asada",
+    "?",
+    3),
+
