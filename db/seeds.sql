@@ -95,17 +95,17 @@ VALUES
 
     ("Sides",
     "Fries",
-    "?",
+    "Crisp, salted, naturally cut potatoes.",
     4),
 
     ("Sides",
     "Fried Yucca",
-    "?",
+    "Fried root vegatable.",
     4),
 
     ("Sides",
     "Side salad"
-    "?",
+    "Mixture of lettuce, cucumber, tomatoes. Topped with a dressing of choice.",
     4),
 
     ("Beverages",
@@ -125,31 +125,31 @@ VALUES
 
     ("Desserts",
     "Alfajor",
-    "?",
+    "Cookie sandwich filled with creamy caramel.",
     3),
 
     ("Desserts",
     "Crema Volteada",
-    "?",
+    "Peruvian style creme caramel",
     3),
 
     ("Desserts",
     "Pionono",
-    "?",
+    "Soft and light sponge cake filled with creamy caramel.",
     3),
 
     ("Desserts",
     "Torta Helada",
-    "?",
+    "Slice of cake suspended within two layers of gelatin. (Chocolate or Vanilla)",
     3),
 
     ("Desserts",
     "Milhojas",
-    "?",
+    "Layers of thin crispy puff pastry filled with creamy caramel.",
     3),
 
     ("Desserts",
     "Leche Asada",
-    "?",
+    "Peruvian style flan with a toasted layer on the surface.",
     3),
 
