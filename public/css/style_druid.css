@@ -1,0 +1,253 @@
+* {
+   box-sizing: border-box;
+}
+
+/* COLORS */
+:root {
+   --dr: #BF0426; /* rgba(191, 3, 38, 1) */
+   --br: #F20505; /* rgba(242, 4, 4, 1) */
+   --or: #F2B705; /* rgba(242, 183, 5, 1) */
+   --wt: #F2F2F2; /* rgba(242, 242, 242, 1) */
+   --bl: #323232; /* rgba(50, 50, 50, 1) */
+}
+
+html {
+   background-color: var(--wt);
+   font-size: 10px;
+}
+
+h1, h2 {
+   font-family: 'Cabin', sans-serif;
+   letter-spacing: 0.15rem;
+   line-height: 1.25;
+}
+
+h3, h4, p, a {
+   font-family: 'Aleo', serif;
+   letter-spacing: 0.15rem;
+   line-height: 1.5;
+}
+
+h1 {font-size: 4rem;}
+
+h2 {font-size: 3rem;}
+
+h3 {font-size: 2rem;}
+
+a, p {font-size: 1.5rem;}
+
+a {text-decoration: none;}
+
+/* BODY */
+/* ------------------------------------------------------------------------------------ */
+.full-width {
+   /* background-image: url(../img/anna-pelzer-IGfIGP5ONV0-unsplash.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center; */
+   width: 100vw;
+   height: 100vh;
+}
+
+/* Photo Slides ------------------------ */
+.mySlides {display: none;}
+
+.mySlides img {
+   width: 100vw;
+   overflow: hidden;
+}
+
+.photo-slide {
+   background-size: cover;
+   /* width: 100vw; */
+   max-height: 100vh;
+   overflow: hidden;
+   position: relative;
+   margin: auto;
+}
+
+.dot {
+   height: 15px;
+   width: 15px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* nav --------------------------------- */
+nav {
+   /* background-color: rgba(242, 183, 5, 0.5); */
+   width: 100%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 3fr auto;
+   grid-template-rows: auto auto;
+   grid-gap: 2rem;
+   justify-items: center;
+   position: absolute;
+   top: 5rem;
+   right: 5rem;
+   border-radius: 2rem;
+   margin-bottom: 2rem;
+}
+
+#logo {grid-area: 1 / 2 / 2 / 3;}
+
+#logo img {width: 25rem;}
+
+.login {
+   font-size: 2rem;
+   background-color: var(--br);
+   color: var(--wt);
+   align-self: center;
+   grid-area: 2 / 2 / 3 / 3;
+   padding: 1.5rem 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 8px 4px var(--wt);
+}
+
+.login:hover {
+   background-color: var(--or);
+   color: var(--dr);
+   box-shadow: 0 0 8px 2px var(--bl);
+   transition: ease-in-out 0.25s;
+}
+
+.slogan {
+   background-color: var(--wt);
+   width: auto;
+   position: absolute;
+   bottom: 3rem;
+   left: 3rem;
+   padding: 2rem;
+   margin-right: 3rem;
+   border-radius: 1rem;
+}
+
+.slogan h1 {
+   color: var(--br);
+   font-size: 4rem;
+}
+
+.slogan h3 {
+   color: var(--bl);
+   font-size: 2.5rem;
+}
+
+.facts {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 2rem;
+   align-items: center;
+   margin: 5rem;
+}
+
+.facts img {
+   width: 100%;
+   border-radius: 1rem;
+}
+
+/* FOOTER */
+footer {
+   background-color: var(--or);
+   color: var(--bl);
+   padding: 2rem;
+}
+
+.footer-col {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   grid-gap: 2rem;
+   width: 100%;
+   margin: 0 auto;
+
+}
+
+.footer-col h3, .footer-col a {
+   color: var(--bl);
+   text-align: center;
+   padding: 0.5rem;
+   display: block;
+}
+
+.social {
+   width: 100%;
+   margin: 5rem auto;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 2rem;
+   align-items: center;
+}
+
+.social i {
+   color: var(--bl);
+   text-align: center;
+}
+
+.logo-footer {
+   text-align: center;
+}
+
+.logo-footer img {
+   width: 15rem;
+}
+
+.rights {
+   font-size: 1.25rem;
+   text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+/* ------------------------------------------------------------------------------------ */
+@media (min-width: 576px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+
+@media (max-width: 1200px) {
+   .mySlides img {
+      width: auto;
+      height: 100vh;
+      overflow: hidden;
+   }
+
+   .photo-slide {
+      background-size: cover;
+
+      max-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+   }
+}
+
+
+/* FONTS */
+/*
+font-family: 'Aleo', serif;
+font-family: 'Cabin', sans-serif;
+*/
