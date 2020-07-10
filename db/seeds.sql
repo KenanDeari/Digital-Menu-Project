@@ -1,4 +1,4 @@
-USE paraiso_lb_db;
+USE druid_db;
 
 INSERT INTO menu (section, item, descrip, price)
 VALUES  
@@ -30,7 +30,7 @@ VALUES
 
     ("Appetizers",
     "Papa Rellena",
-    "Fried potato croquette filled with ground beef, onions, black olives, raisins, and eggs."
+    "Fried potato croquette filled with ground beef, onions, black olives, raisins, and eggs.",
     8),
 
     ("Appetizers",
@@ -50,7 +50,7 @@ VALUES
 
     ("Entrees",
     "Aji de Gallina",
-    "Pulled chicken on a Peruvian yellow pepper sauce served over potatos and rice."
+    "Pulled chicken on a Peruvian yellow pepper sauce served over potatos and rice.",
     13),
 
     ("Entrees",
@@ -65,17 +65,17 @@ VALUES
 
     ("Entrees",
     "Tallarines Verdes con Bistec",
-    "Peruvian style pesto on spaghetti served with a thinly sliced steak."
+    "Peruvian style pesto on spaghetti served with a thinly sliced steak.",
     15),
 
     ("Entrees",
     "Tallarines Verdes con Papa a la Huancaina",
-    "Peruvian style pesto on spaghetti served with Papa a la Huancaina."
+    "Peruvian style pesto on spaghetti served with Papa a la Huancaina.",
     13),
 
     ("Entrees",
-    "Pollo a la brasa con papas y ensalada"
-    "Peruvian style rotisserie chicken served with fries and a house salad."
+    "Pollo a la brasa con papas y ensalada",
+    "Peruvian style rotisserie chicken served with fries and a house salad.",
     20),
 
     ("Sides",
@@ -88,7 +88,7 @@ VALUES
     "?",
     3),
 
-    ("Sides"
+    ("Sides",
     "Huancaina Sauce",
     "?",
     3),
@@ -104,7 +104,7 @@ VALUES
     4),
 
     ("Sides",
-    "Side salad"
+    "Side salad",
     "?",
     4),
 
@@ -115,11 +115,11 @@ VALUES
 
     ("Beverages",
     "Maracuya",
-    "Passion fruit drink."
+    "Passion fruit drink.",
     3),
 
     ("Beverages",
     "Inca Kola, Coke (can)",
     "?",
-    2),
+    2)
 
