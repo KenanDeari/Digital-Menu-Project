@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -51,10 +51,66 @@ module.exports = function(app) {
     }
   });
 
+  // Paraiso Routes
   app.get("/api/view-menu", (req, res) => {
-    db.paraiso.findAll().then(data => {
-      res.json(data);
-      
+    db.Paraiso.findAll().then(menu => {
+      // res.json(menu);
+      res.render("view-menu", {
+        
+      });
+    });
+  });
+
+  app.post("/api/add-to-menu", (req, res) => {
+    db.Paraiso.create(req.body).then(dbParaiso => {
+      res.json(dbParaiso);
     })
   })
 };
+
+  // added this morning ---------------- check if works
+   // GET
+  // app.get("/api/paraiso", (req, res) => {
+  //   const query = {};
+  //   if (req.query.user_id) {
+  //     query.AuthorId = req.query.user_id;
+  //   }
+  //   db.paraiso.findAll({
+  //     where: query,
+  //     include: [db.User]
+  //   }).then(dbParaiso => {
+  //     res.json(dbParaiso);
+  //   });
+  // });
+
+  // POST
+  // app.post("/api/paraiso", (req, res) => {
+  //   db.paraiso.create(req.body).then(dbParaiso => {
+  //     res.json(dbParaiso);
+  //   });
+  // });
+
+  // PUT
+  // app.put("/api/paraiso", (req, res) => {
+  //   db.paraiso.update(
+  //     req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     }).then(dbParaiso => {
+  //     res.json(dbParaiso);
+  //   });
+  // });
+   
+  // DELETE
+//   app.delete("/api/paraiso/:id", (req, res) => {
+//     db.paraiso.destroy({
+//       where: {
+//         id: req.params.id
+//       }
+//     }).then(dbParaiso => {
+//       res.json(dbParaiso);
+//     });
+//   });
+// };

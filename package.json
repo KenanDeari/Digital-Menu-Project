@@ -16,8 +16,9 @@
   "dependencies": {
     "bcryptjs": "2.4.3",
     "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
     "express-session": "^1.16.1",
-    "mysql2": "^1.6.5",
+    "mysql2": "^1.7.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
@@ -29,6 +30,7 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "handlebars": "^4.7.6",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
   }

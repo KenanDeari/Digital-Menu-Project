@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="/css/style-paraiso.css">
+   <link href="https://fonts.googleapis.com/css2?family=Aleo&family=Cabin:wght@700&display=swap" rel="stylesheet"> 
+
+   <title>Restaurant - Manager</title>
+</head>
+<body>
+   <main class="container">
+      <h1>Menu</h1>
+
+      <section class="table-view">
+         <div class="columns">
+            <p>id</p>
+         </div>
+         <div class="columns">
+            <p>Section</p>
+         </div>
+         <div class="columns">
+            <p>Items</p>
+         </div>
+         <div class="columns">
+            <p>Description</p>
+         </div>
+         <div class="columns">
+            <p>Price</p>
+         </div>
+      </section>
+
+      {{#each menu}}
+         <section class="table-view">
+         <div class="columns">
+            <p>{{id}}</p>
+         </div>
+         <div class="columns">
+            <p>{{section}}</p>
+         </div>
+         <div class="columns">
+            <p>{{item}}</p>
+         </div>
+         <div class="columns">
+            <p>{{descrip}}</p>
+         </div>
+         <div class="columns">
+            <p>{{price}}</p>
+         </div>
+      {{else}}
+         <p class="empty">Your menu is empty, please start adding items.</p>
+      {{/each}}
+   </main>
+
+</html>

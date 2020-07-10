@@ -1,6 +1,6 @@
 USE druid_db;
 
-INSERT INTO paraiso (section, item, descrip, price, createdAt, updatedAt)
+INSERT INTO Paraiso (section, item, descrip, price, createdAt, updatedAt)
 VALUES  
 
     ("Appetizers", 

@@ -124,7 +124,32 @@ h3 {
    transition: ease-in-out 0.25s;
 }
 
+/* VIEW MENU FILE
+--------------------------------------------------------------------------------------- */
+.container {
+   width: 90%;
+   margin: 0 auto;
+   border: yellow 2px solid;
+}
 
+/* Table -------------------------------------- */
+.table-view {
+   width: 90%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
+   border: 2px solid red;
+}
+
+.columns {
+   text-align: center;
+   border:  orange solid 2px;
+}
+
+.empty {
+   text-align: center;
+   margin-top: 3rem;
+}
 
 /* FONTS */
 /*
