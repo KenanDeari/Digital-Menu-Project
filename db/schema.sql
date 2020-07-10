@@ -1,6 +1,6 @@
 -- DROP DATABASE IF EXISTS paraiso_lb_db;
-CREATE DATABASE paraiso_lb_db;
-USE paraiso_lb_db;
+CREATE DATABASE druid_db;
+USE druid_db;
 
 -- CREATE TABLE menu (
 --    id INT NOT NULL AUTO_INCREMENT,

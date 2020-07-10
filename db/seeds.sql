@@ -1,4 +1,4 @@
-USE paraiso_lb_db;
+USE druid_db;
 
 INSERT INTO menu (section, item, descrip, price)
 VALUES  
