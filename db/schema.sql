@@ -6,7 +6,7 @@ CREATE TABLE Paraiso (
    id INT NOT NULL AUTO_INCREMENT,
    section VARCHAR(40),
    item VARCHAR(60) NOT NULL,
-   descrip VARCHAR(500) NOT NULL,
+   descrip VARCHAR(500) NULL,
    price INT,
    createdAt DATE,
    updatedAt DATE,

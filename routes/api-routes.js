@@ -61,12 +61,22 @@ module.exports = app => {
     });
   });
 
-  app.post("/api/add-to-menu", (req, res) => {
-    db.Paraiso.create(req.body).then(dbParaiso => {
-      res.json(dbParaiso);
-    })
-  })
+  app.get("/api/add-to-menu", (req, res) => {
+    db.Paraiso.findAll().then(menu => {
+      // res.json(menu);
+      res.render("add-to-menu", {
+        
+      });
+    });
+  });
 };
+
+//   app.post("/api/add-to-menu", (req, res) => {
+//     db.Paraiso.create(req.body).then(dbParaiso => {
+//       res.json(dbParaiso);
+//     })
+//   })
+// };
 
   // added this morning ---------------- check if works
    // GET

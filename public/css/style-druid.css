@@ -115,7 +115,7 @@ nav {
 
 #logo {
    grid-area: 1 / 2 / 2 / 3;
-   background-color: rgba(242, 242, 242, 0.75);
+   background-color: rgba(242, 242, 242, 0.85);
    padding: 2rem 1rem 2rem 2rem;
    border-radius: 1rem;
    box-shadow: 0 0 8px var(--wt);
@@ -238,6 +238,9 @@ footer {
 }
 
 .logo-footer img {
+   background-color: var(--wt);
+   border-radius: 2rem;
+   padding: 2rem 1rem 2rem 2rem;
    width: 15rem;
 }
 

@@ -11,46 +11,17 @@
 </head>
 <body>
    <main class="container">
-      <h1>Menu</h1>
+      <h1>Add items to Menu</h1>
 
-      <section class="table-view">
-         <div class="columns">
-            <p>id</p>
-         </div>
-         <div class="columns">
-            <p>Section</p>
-         </div>
-         <div class="columns">
-            <p>Items</p>
-         </div>
-         <div class="columns">
-            <p>Description</p>
-         </div>
-         <div class="columns">
-            <p>Price</p>
-         </div>
+      <section class="form-container">
+         <form id="add-to-menu">
+            <input class="form-paraiso" id="section" type="text" placeholder="type of food">
+            <input class="form-paraiso" id="item" type="text" placeholder="add item">
+            <input class="form-paraiso" id="descrip" type="text" placeholder="add description">
+            <input class="form-paraiso" id="price" type="text" placeholder="add price">
+            <button type="submit" class="button">add item</button>
+         </form>
       </section>
-
-      {{#each menu}}
-         <section class="table-view">
-         <div class="columns">
-            <p>{{id}}</p>
-         </div>
-         <div class="columns">
-            <p>{{section}}</p>
-         </div>
-         <div class="columns">
-            <p>{{item}}</p>
-         </div>
-         <div class="columns">
-            <p>{{descrip}}</p>
-         </div>
-         <div class="columns">
-            <p>{{price}}</p>
-         </div>
-      {{else}}
-         <p class="empty">Your menu is empty, please start adding items.</p>
-      {{/each}}
    </main>
 
 </html>

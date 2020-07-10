@@ -39,6 +39,27 @@ a, p {font-size: 1.5rem;}
 
 a {text-decoration: none;}
 
+button {
+   border: none;
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   text-align: center;
+   background-color: var(--br);
+   color: var(--wt);
+   justify-self: center;
+   align-self: center;
+   padding: 1.5rem 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 8px 4px var(--wt);
+}
+
+button:hover {
+   background-color: var(--or);
+   color: var(--dr);
+   box-shadow: 0 0 8px 2px var(--bl);
+   transition: ease-in-out 0.25s;
+}
+
 /* BODY */
 /* ------------------------------------------------------------------------------------ */
 /* Nav ---------------------------------------- */
@@ -95,6 +116,10 @@ h3 {
    justify-content: center;
 }
 
+.crud p {
+   text-align: center;
+}
+
 .crud-button {
    height: auto;
    display: grid;
@@ -102,11 +127,7 @@ h3 {
    justify-content: center;
 }
 
-.crud-button p {
-   text-align: center;
-}
-
-.crud-button a {
+.crud button {
    font-size: 2rem;
    text-align: center;
    background-color: var(--or);
@@ -117,7 +138,7 @@ h3 {
    box-shadow: 0 0 5px var(--bl);
 }
 
-.crud-button a:hover {
+.crud button:hover {
    background-color: var(--br);
    color: var(--wt);
    box-shadow: 0 0 8px 2px var(--bl);
@@ -149,6 +170,33 @@ h3 {
 .empty {
    text-align: center;
    margin-top: 3rem;
+}
+
+/* ADD TO MENU FILE
+--------------------------------------------------------------------------------------- */
+.form-container {
+   width: 100%;
+   margin: 0 auto;
+}
+
+#add-to-menu {
+   display: grid;
+   grid-template-rows: repeat(5, 1fr);
+   grid-gap: 2rem;
+}
+
+input {
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   padding: 1rem;
+
+}
+
+input::placeholder {
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   color: var(--bl);
+
 }
 
 /* FONTS */
