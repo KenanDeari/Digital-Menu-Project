@@ -50,4 +50,11 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/view-menu", (req, res) => {
+    db.paraiso.findAll().then(data => {
+      res.json(data);
+      
+    })
+  })
 };

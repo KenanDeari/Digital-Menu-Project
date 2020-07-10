@@ -1,0 +1,100 @@
+* {
+   box-sizing: border-box;
+}
+
+/* COLORS */
+:root {
+   --dr: #BF0426; /* rgba(191, 3, 38, 1) */
+   --br: #F20505; /* rgba(242, 4, 4, 1) */
+   --or: #F2B705; /* rgba(242, 183, 5, 1) */
+   --wt: #F2F2F2; /* rgba(242, 242, 242, 1) */
+   --bl: #323232; /* rgba(50, 50, 50, 1) */
+}
+
+html {
+   background-color: var(--wt);
+   color: var(--bl);
+   font-size: 10px;
+}
+
+h1, h2, h3 {
+   font-family: 'Cabin', sans-serif;
+   letter-spacing: 0.15rem;
+   line-height: 1.25;
+}
+
+p, a {
+   font-family: 'Aleo', serif;
+   letter-spacing: 0.15rem;
+   line-height: 1.5;
+}
+
+h1 {
+   font-size: 4rem;
+   text-align: center;
+}
+
+h2 {font-size: 3rem;}
+
+h3 {font-size: 2rem;}
+
+a, p {font-size: 1.5rem;}
+
+a {text-decoration: none;}
+
+/* BODY */
+/* ------------------------------------------------------------------------------------ */
+/* Nav ---------------------------------------- */
+nav {
+   width: 100%;
+   margin: 0 auto 5rem;
+   padding: 2rem;
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   border-bottom: 0.5rem var(--or) solid;
+}
+
+#logo img{
+   width: 20rem;
+} 
+
+.logout {
+   font-size: 2rem;
+   text-align: center;
+   background-color: var(--br);
+   color: var(--wt);
+   justify-self: center;
+   align-self: center;
+   padding: 1.5rem 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 8px 4px var(--wt);
+}
+
+.logout:hover {
+   background-color: var(--or);
+   color: var(--dr);
+   box-shadow: 0 0 8px 2px var(--bl);
+   transition: ease-in-out 0.25s;
+}
+
+/* Table -------------------------------------- */
+.table-view {
+   width: 90%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
+   border: 2px solid red;
+}
+
+.columns {
+   text-align: center;
+   border:  orange solid 2px;
+}
+
+
+
+/* FONTS */
+/*
+font-family: 'Aleo', serif;
+font-family: 'Cabin', sans-serif;
+*/
