@@ -85,27 +85,17 @@ VALUES
 
     ("Sides",
     "Fried Plantains",
-    "?",
+    "Sliced plantains fried in oil",
     3),
 
     ("Sides",
     "Huancaina Sauce",
-    "?",
+    "Sauce made from queso fresco (fresh white cheese), vegetable oil, ají amarillo (yellow Peruvian pepper), evaporated milk.",
     3),
 
     ("Sides",
     "Fries",
-    "?",
-    4),
-
-    ("Sides",
-    "Fried Yucca",
-    "?",
-    4),
-
-    ("Sides",
-    "Side salad",
-    "?",
+    "Sliced potatoes deep fried and lightly salted",
     4),
 
     ("Sides",
