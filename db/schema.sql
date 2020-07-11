@@ -1,11 +1,11 @@
--- DROP DATABASE IF EXISTS paraiso_lb_db;
+-- DROP DATABASE IF EXISTS druid_db;
 CREATE DATABASE druid_db;
 USE druid_db;
 
 CREATE TABLE Paraiso (
    id INT NOT NULL AUTO_INCREMENT,
-   section VARCHAR(40),
-   item VARCHAR(60) NOT NULL,
+   section VARCHAR(100),
+   item VARCHAR(100) NOT NULL,
    descrip VARCHAR(500) NULL,
    price INT,
    createdAt DATE,

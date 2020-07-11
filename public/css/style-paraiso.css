@@ -39,6 +39,8 @@ a, p {font-size: 1.5rem;}
 
 a {text-decoration: none;}
 
+a:hover {text-decoration: none;}
+
 button {
    border: none;
    font-family: 'Aleo', serif;
@@ -60,7 +62,7 @@ button:hover {
    transition: ease-in-out 0.25s;
 }
 
-/* BODY */
+/* MAIN handlebars */
 /* ------------------------------------------------------------------------------------ */
 /* Nav ---------------------------------------- */
 nav {
@@ -72,7 +74,7 @@ nav {
    border-bottom: 0.5rem var(--or) solid;
 }
 
-#logo img{
+.logo {
    width: 20rem;
 } 
 
@@ -93,6 +95,10 @@ nav {
    color: var(--dr);
    box-shadow: 0 0 8px 2px var(--bl);
    transition: ease-in-out 0.25s;
+}
+
+.not-display {
+   display: none;
 }
 
 /* Titles ------------------------------------- */
@@ -125,6 +131,7 @@ h3 {
    display: grid;
    grid-gap: 2rem;
    justify-content: center;
+   margin-top: 5rem;
 }
 
 .crud button {
@@ -145,26 +152,57 @@ h3 {
    transition: ease-in-out 0.25s;
 }
 
+/* PARAISO - COMMAND CONTROL FILE */
+.crud a {
+   border: none;
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   text-align: center;
+   background-color: var(--or);
+   color: var(--bl);
+   justify-self: center;
+   align-self: center;
+   width: 20rem;
+   padding: 1.5rem 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 8px var(--bl);
+}
+
+.crud a:hover {
+   text-decoration: none;
+   background-color: var(--br);
+   color: var(--wt);
+   box-shadow: 0 0 8px var(--bl);
+   transition: ease-in-out 0.25s;
+}
+
 /* VIEW MENU FILE
 --------------------------------------------------------------------------------------- */
 .container {
    width: 90%;
    margin: 0 auto;
-   border: yellow 2px solid;
 }
 
 /* Table -------------------------------------- */
 .table-view {
-   width: 90%;
+   width: 100%;
    margin: 0 auto;
    display: grid;
-   grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
-   border: 2px solid red;
+   grid-template-columns: 1fr 2fr 2fr 5fr 1fr 1fr;
 }
 
 .columns {
    text-align: center;
-   border:  orange solid 2px;
+}
+
+.col-icons {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 0.5rem;
+}
+
+.col-icons a {
+   color: var(--dr);
 }
 
 .empty {
@@ -189,7 +227,6 @@ input {
    font-family: 'Aleo', serif;
    font-size: 2rem;
    padding: 1rem;
-
 }
 
 input::placeholder {

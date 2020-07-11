@@ -3,9 +3,6 @@ const db = require("../models");
 const passport = require("../config/passport");
 
 module.exports = app => {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
@@ -14,9 +11,6 @@ module.exports = app => {
     });
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
@@ -42,8 +36,6 @@ module.exports = app => {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id
@@ -51,17 +43,25 @@ module.exports = app => {
     }
   });
 
-  // Paraiso Routes
+  // Paraiso Routes -----------------------------------------------------------
+  // GET
   app.get("/api/view-menu", (req, res) => {
-    db.Paraiso.findAll().then(menu => {
+    db.Paraiso.findAll()
+      .then(menu => {     
       // res.json(menu);
+        // console.log(menu);
+      //   const menuData = {paraisoMenu: 
+            
+      // };
       res.render("view-menu", {
-        
-      });
-    });
+      menu
+      })
+    })
+    .catch(err => console.log(err));
   });
 
-  app.get("/api/add-to-menu", (req, res) => {
+  // POST
+  app.post("/api/add-to-menu", (req, res) => {
     db.Paraiso.findAll().then(menu => {
       // res.json(menu);
       res.render("add-to-menu", {
@@ -69,29 +69,27 @@ module.exports = app => {
       });
     });
   });
+
+  // UPDATE
+  app.put("/api/view-menu", (req, res) => {
+    db.Paraiso.findAll().then(menu => {
+      // res.json(menu);
+      res.render("add-to-menu", {
+
+      });
+    });
+  });
+
+  // DELETE
+  app.delete("/api/view-menu", (req, res) => {
+    db.Paraiso.findAll().then(menu => {
+      // res.json(menu);
+      res.render("add-to-menu", {
+
+      });
+    });
+  });
 };
-
-//   app.post("/api/add-to-menu", (req, res) => {
-//     db.Paraiso.create(req.body).then(dbParaiso => {
-//       res.json(dbParaiso);
-//     })
-//   })
-// };
-
-  // added this morning ---------------- check if works
-   // GET
-  // app.get("/api/paraiso", (req, res) => {
-  //   const query = {};
-  //   if (req.query.user_id) {
-  //     query.AuthorId = req.query.user_id;
-  //   }
-  //   db.paraiso.findAll({
-  //     where: query,
-  //     include: [db.User]
-  //   }).then(dbParaiso => {
-  //     res.json(dbParaiso);
-  //   });
-  // });
 
   // POST
   // app.post("/api/paraiso", (req, res) => {
