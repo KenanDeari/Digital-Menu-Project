@@ -99,7 +99,6 @@ a {text-decoration: none;}
 
 /* nav --------------------------------- */
 nav {
-   /* background-color: rgba(242, 183, 5, 0.5); */
    width: 100%;
    margin: 0 auto;
    display: grid;
@@ -114,7 +113,13 @@ nav {
    margin-bottom: 2rem;
 }
 
-#logo {grid-area: 1 / 2 / 2 / 3;}
+#logo {
+   grid-area: 1 / 2 / 2 / 3;
+   background-color: rgba(242, 242, 242, 0.85);
+   padding: 2rem 1rem 2rem 2rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 8px var(--wt);
+}
 
 #logo img {width: 25rem;}
 
@@ -233,6 +238,9 @@ footer {
 }
 
 .logo-footer img {
+   background-color: var(--wt);
+   border-radius: 2rem;
+   padding: 2rem 1rem 2rem 2rem;
    width: 15rem;
 }
 
