@@ -1,17 +1,18 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
+const db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/intro-page.html"));
-  });
+  // app.get("/", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   if (req.user) {
+  //     res.redirect("/members");
+  //   }
+  //   res.sendFile(path.join(__dirname, "../public/intro-page.html"));
+  // });
 
   // app.get("/index")
 
@@ -54,18 +55,30 @@ module.exports = function(app) {
   });
 
   // INTRO-PAGE
-  // app.get("/", isAuthenticated, (req, res) => {
-  //   db.Paraiso.findAll().then(() => {
-  //     res.render("intro-page", {
-  //     })
-  //   })
-  // });
+  app.get("/", (req, res) => {
+      res.render("intro-page", {
+    })
+  });
 
   // COMMAND CONTROL
-  app.get("/view-menu", isAuthenticated, (req, res) => {
+  app.get("/view-menu", (req, res) => {
     db.Paraiso.findAll().then(menu => {
+      // res.json(menu)
+      // console.log(menu);
+      const paraisoNew = {
+        menu: menu.map(item => {
+          return {
+            id: item.id,
+            section: item.section,
+            item: item.item,
+            descrip: item.descrip,
+            price: item.price
+          }
+        })
+      }
+      // console.log(paraisoNew);
       res.render("view-menu", {
-        // menu
+        menu: paraisoNew.menu
       })
     })
   });

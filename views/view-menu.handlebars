@@ -22,50 +22,27 @@
       </div>
    </section>
 
-   <section class="table-view">
-      <div class="columns">
-         <p>1</p>
-      </div>
-      <div class="columns">
-         <p>Appetizers</p>
-      </div>
-      <div class="columns">
-         <p>Chicken Wings</p>
-      </div>
-      <div class="columns">
-         <p>Fried chicken wings with hot sauce</p>
-      </div>
-      <div class="columns">
-         <p>10</p>
-      </div>
-      <div class="columns col-icons">
-         <a href=""><i class="far fa-edit fa-1x"></i></a>
-         <a href=""><i class="fas fa-trash fa-1x"></i></a>
-      </div>
-   </section>
-
    {{#each menu}}
       <section class="table-view">
-      <div class="columns">
-         <p>{{id}}</p>
-      </div>
-      <div class="columns">
-         <p>{{section}}</p>
-      </div>
-      <div class="columns">
-         <p>{{item}}</p>
-      </div>
-      <div class="columns">
-         <p>{{descrip}}</p>
-      </div>
-      <div class="columns">
-         <p>{{price}}</p>
-      </div>
-      <div class="columns col-icons">
-         <a href=""><i class="far fa-edit fa-1x"></i></a>
-         <a href=""><i class="fas fa-trash fa-1x"></i></a>
-      </div>
-   {{else}}
-      <p class="empty">Your menu is empty, please start adding items.</p>
+         <div class="columns">
+            <p>{{id}}</p>
+         </div>
+         <div class="columns">
+            <p>{{section}}</p>
+         </div>
+         <div class="columns">
+            <p>{{item}}</p>
+         </div>
+         <div class="columns">
+            <p>{{descrip}}</p>
+         </div>
+         <div class="columns">
+            <p>{{price}}</p>
+         </div>
+         <div class="columns col-icons">
+            <a href=""><i class="far fa-edit fa-1x"></i></a>
+            <a href=""><i class="fas fa-trash fa-1x"></i></a>
+         </div>
+      </section>
    {{/each}}
 </main>

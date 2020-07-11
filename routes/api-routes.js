@@ -62,11 +62,8 @@ module.exports = app => {
 
   // POST
   app.post("/api/add-to-menu", (req, res) => {
-    db.Paraiso.findAll().then(menu => {
-      // res.json(menu);
-      res.render("add-to-menu", {
-        
-      });
+    db.Paraiso.create(req.body).then(dbParaiso => {
+      res.json(dbParaiso)
     });
   });
 
