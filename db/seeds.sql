@@ -104,13 +104,8 @@ VALUES
     4),
 
     ("Sides",
-<<<<<<< HEAD
     "Side salad"
     "Mixture of lettuce, cucumber, tomatoes. Topped with a dressing of choice.",
-=======
-    "Side salad",
-    "?",
->>>>>>> b05e0b082b9845e1a06a086f7d99ed7cb267adcb
     4),
 
     ("Beverages",
