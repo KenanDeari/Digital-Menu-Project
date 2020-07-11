@@ -29,7 +29,10 @@ p, a {
    line-height: 1.5;
 }
 
-h1 {font-size: 4rem;}
+h1 {
+   font-size: 4rem;
+   text-align: center;
+}
 
 h2 {font-size: 3rem;}
 
@@ -74,54 +77,18 @@ nav {
    transition: ease-in-out 0.25s;
 }
 
-/* Titles ------------------------------------- */
-h1 {
-   text-align: center;
-   margin-bottom: 2rem;
-}
-
-h3 {
-   text-align: center;
-   margin-bottom: 4rem;
-}
-
-/* Crud --------------------------------------- */
-.crud {
-   padding: 0 5rem;
+/* Table -------------------------------------- */
+.table-view {
+   width: 90%;
+   margin: 0 auto;
    display: grid;
-   grid-template-rows: repeat(2, 1fr);
-   grid-template-columns: repeat(2, 1fr);
-   grid-gap: 5rem;
-   justify-content: center;
+   grid-template-columns: 1fr 2fr 2fr 5fr 1fr;
+   border: 2px solid red;
 }
 
-.crud-button {
-   height: auto;
-   display: grid;
-   grid-gap: 2rem;
-   justify-content: center;
-}
-
-.crud-button p {
+.columns {
    text-align: center;
-}
-
-.crud-button a {
-   font-size: 2rem;
-   text-align: center;
-   background-color: var(--or);
-   color: var(--bl);
-   width: 25rem;
-   padding: 1.5rem 3rem;
-   border-radius: 1rem;
-   box-shadow: 0 0 5px var(--bl);
-}
-
-.crud-button a:hover {
-   background-color: var(--br);
-   color: var(--wt);
-   box-shadow: 0 0 8px 2px var(--bl);
-   transition: ease-in-out 0.25s;
+   border:  orange solid 2px;
 }
 
 

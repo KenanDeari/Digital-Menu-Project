@@ -4,44 +4,46 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/css/reset.css">
-   <link rel="stylesheet" href="/css/style-rest-manager.css">
+   <link rel="stylesheet" href="/css/style-paraiso.css">
    <link href="https://fonts.googleapis.com/css2?family=Aleo&family=Cabin:wght@700&display=swap" rel="stylesheet"> 
 
    <title>Restaurant - Manager</title>
 </head>
 <body>
+   <header>
    <!-- Nav -->
-   <nav>
-      <a href="./index.html" id="logo">
-         <img src="./img/logo_paraiso.png" alt="">
-      </a>
-      <a class="logout" href="">logout</a>
-   </nav>
+      <nav>
+         <a href="./index.html" id="logo">
+            <img src="./img/logo_paraiso.png" alt="">
+         </a>
+         <button type="submit" class="logout" href="/logout">logout</button>
+      </nav>
+   </header>
 
    <main>
-   <h1>Command Center</h1>
+   <h1>Command Control</h1>
 
    <h3>What would you like to do?</h3>
 
    <section class="crud">
       <div class="crud-button">
          <p>View your menu</p>
-         <a href="">view</a>
+         <button  type="submit">view</button>
       </div>
 
       <div class="crud-button">
          <p>Add an item</p>
-         <a href="">add</a>
+         <button  type="submit">add</button>
       </div>
 
       <div class="crud-button">
          <p>Update an item</p>
-         <a href="">update</a>
+         <button type="submit">update</button>
       </div>
 
       <div class="crud-button">
          <p>Delete an item</p>
-         <a href="">delete</a>
+         <button type="submit">delete</button>
       </div>
    </section>
 

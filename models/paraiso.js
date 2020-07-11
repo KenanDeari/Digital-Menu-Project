@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => {
-  var Post = sequelize.define("Post", {
+module.exports = function (sequelize, DataTypes) {
+  const Paraiso = sequelize.define("Paraiso", {
     section: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       len: [1, 50]
      },
      descrip: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
         len: [1, 300]
      },
@@ -21,7 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         len: [1]
-     }
+    }
+  }, {
+    freezeTableName: true
   });
-  return Post;
+  
+  return Paraiso;
 };
