@@ -1,16 +1,16 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Paraiso = sequelize.define("Paraiso", {
     section: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1, 30]
+        len: [1, 60]
       }
     },
     item: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1, 50]
+      len: [1, 60]
      },
      descrip: {
         type: DataTypes.STRING,
@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
      price: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        len: [1]
+        len: [1, 10]
     }
   }, {
     freezeTableName: true
