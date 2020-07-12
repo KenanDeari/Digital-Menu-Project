@@ -1,4 +1,4 @@
--- DROP DATABASE IF EXISTS druid_db;
+DROP DATABASE IF EXISTS druid_db;
 CREATE DATABASE druid_db;
 USE druid_db;
 

@@ -16,6 +16,12 @@ html {
    font-size: 10px;
 }
 
+body {
+   height: auto;
+   min-height: 100vh;
+   background-color: var(--bl);
+}
+
 h1, h2, h3 {
    font-family: 'Cabin', sans-serif;
    letter-spacing: 0.15rem;
@@ -38,32 +44,38 @@ a, p {font-size: 1.5rem;}
 
 a {text-decoration: none;}
 
+a:hover {text-decoration: none;}
+
+button {
+   font-family: 'Aleo', serif;
+   font-size: 1.5rem;
+   border: none;
+}
+
+/* DRUID - PAGE INTRO
+--------------------------------------------------------------------------------------- */
 /* BODY */
 /* ------------------------------------------------------------------------------------ */
 .full-width {
-   /* background-image: url(../img/anna-pelzer-IGfIGP5ONV0-unsplash.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center; */
    width: 100vw;
    height: 100vh;
 }
 
 /* Photo Slides ------------------------ */
-.mySlides {display: none;}
-
-.mySlides img {
-   width: 100vw;
-   overflow: hidden;
-}
-
 .photo-slide {
-   background-size: cover;
    /* width: 100vw; */
-   max-height: 100vh;
+   height: 100vh;
    overflow: hidden;
    position: relative;
    margin: auto;
+}
+
+.mySlides img {
+   object-fit: cover;
+   object-position: top center;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
 }
 
 .dot {
@@ -82,23 +94,23 @@ a {text-decoration: none;}
 
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 4.95s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 4.95s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .8} 
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .8} 
   to {opacity: 1}
 }
 
 /* nav --------------------------------- */
-nav {
+.nav-intro {
    width: 100%;
    margin: 0 auto;
    display: grid;
@@ -109,7 +121,7 @@ nav {
    position: absolute;
    top: 5rem;
    right: 5rem;
-   border-radius: 2rem;
+   border: none;
    margin-bottom: 2rem;
 }
 
@@ -123,7 +135,7 @@ nav {
 
 #logo img {width: 25rem;}
 
-.login {
+.login-intro {
    font-size: 2rem;
    background-color: var(--br);
    color: var(--wt);
@@ -134,7 +146,7 @@ nav {
    box-shadow: 0 0 8px 4px var(--wt);
 }
 
-.login:hover {
+.login-intro:hover {
    background-color: var(--or);
    color: var(--dr);
    box-shadow: 0 0 8px 2px var(--bl);
@@ -162,20 +174,6 @@ nav {
    font-size: 2.5rem;
 }
 
-/* Facts ------------------------------- */
-.facts {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-gap: 2rem;
-   align-items: center;
-   margin: 5rem;
-}
-
-.facts img {
-   width: 100%;
-   border-radius: 1rem;
-}
-
 /* News -------------------------------- */
 .news {
    background-color: var(--dr);
@@ -194,6 +192,27 @@ nav {
 .news h3 {
    margin-bottom: 2rem;
 }
+
+/* Facts ------------------------------- */
+.full-width-facts {
+   background-color: var(--wt);
+   padding: 2rem 0;
+}
+
+.facts {
+   background-color: var(--wt);
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 2rem;
+   align-items: center;
+   margin: 5rem;
+}
+
+.facts img {
+   width: 100%;
+   border-radius: 1rem;
+}
+
 
 /* FOOTER */
 footer {
@@ -250,26 +269,177 @@ footer {
 }
 
 
+/* PARAISO
+--------------------------------------------------------------------------------------- */
+/* General classes and ids */
+.button-red {
+   text-align: center;
+   align-self: center;
+   background-color: var(--br);
+   color: var(--wt);
+   border-radius: 1rem;
+   padding: 1rem 2rem;
+   box-shadow: 0 2px 5px var(--bl);
+}
+
+.button-red:hover {
+   background-color: var(--or);
+   color: var(--bl);
+   transition: ease-in-out 0.5s;
+}
+
+.button-orange {
+   text-align: center;
+   align-self: center;
+   background-color: var(--or);
+   color: var(--bl);
+   border-radius: 1rem;
+   padding: 1rem 2rem;
+   box-shadow: 0 2px 5px var(--bl);
+}
+
+.button-orange:hover {
+   background-color: var(--dr);
+   color: var(--wt);
+   transition: ease-in-out 0.5s;
+}
+
+.container {
+   width: 90%;
+}
+
+
+/* - main.handlebars
+----------------------------------------------- */
+#nav-intro {
+   background-color: var(--wt);
+   width: 100%;
+   margin: 0 auto;
+   border-bottom: 0.5rem solid var(--or);
+   padding: 2rem; 
+   margin-bottom: 5rem;
+}
+
+.logo {
+   max-width: 20rem;
+}
+
+
+/* login.handlebars and signup.handlebars
+----------------------------------------------- */
+.login-form {
+   background-color: var(--wt);
+   border-radius: 1rem;
+   padding: 3rem;
+   box-shadow: 0 0 12px 5px var(--or);
+}
+
+.login-form h2 {
+   padding-bottom: 2rem;
+}
+
+.login-form input {
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   padding: 2rem;
+}
+
+.login-form .button-orange {
+   width: 10rem;
+   height: 5rem;
+   margin-top: 1rem;
+   margin-bottom: 2rem;
+}
+
+.login-form p {
+   margin-bottom: 0;
+}
+
+
+/* paraiso-comm-control.handlebars
+----------------------------------------------- */
+.comm-control h1, .comm-control h3 {
+   text-align: center;
+   color: var(--wt);
+}
+
+.comm-control .row {
+   justify-items: center;
+   background-color: var(--wt);
+   width: 80%;
+   margin: 0 auto;
+   padding: 3rem;
+   padding-bottom: 4rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 12px 5px var(--or);
+}
+
+.comm-control h1 {
+   margin-bottom: 3rem;
+}
+
+.comm-control h3 {
+   margin-bottom: 5rem;
+}
+
+.comm-control p {
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.comm-control .button-orange {
+   padding: 1rem 8rem;
+}
+
+
+/* view-menu.handlebars
+----------------------------------------------- */
+.view-menu h1 {
+   color: var(--wt);
+   margin-bottom: 3rem;
+   text-align: center;
+}
+
+.view-menu thead {
+   background-color: var(--dr);
+   color: var(--wt);
+}
+
+.table-container {
+   background-color: var(--wt);
+   width: 90%;
+   margin: 0 auto;
+   padding: 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 12px 5px var(--or);
+}
+table {
+   background-color: var(--wt);
+}
+
+.table-title p {
+   text-align: center;
+   margin: 0;
+   padding: 1rem;
+}
+
+.table-body p, .table-body a {
+   font-size: 1.25rem;
+   margin: 0;
+   padding: 0.5rem;
+   border-bottom: 1px solid var(--or);
+}
+
+.table-body i {
+   text-align: center;
+}
+
 /* MEDIA QUERIES */
 /* ------------------------------------------------------------------------------------ */
 @media (min-width: 576px) {}
 @media (min-width: 768px) {}
 @media (min-width: 992px) {}
-
-@media (max-width: 1200px) {
-   .mySlides img {
-      width: auto;
-      height: 100vh;
-      overflow: hidden;
-   }
-
-   .photo-slide {
-      max-height: 100vh;
-      overflow: hidden;
-      position: relative;
-      margin: auto;
-   }
-}
+@media (min-width: 1200px) {}
 
 
 /* FONTS */
