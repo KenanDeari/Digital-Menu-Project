@@ -57,13 +57,13 @@ button {
 /* BODY */
 /* ------------------------------------------------------------------------------------ */
 .full-width {
-   width: 100vw;
+   max-width: 100vw;
    height: 100vh;
 }
 
 /* Photo Slides ------------------------ */
 .photo-slide {
-   /* width: 100vw; */
+   width: 100%;
    height: 100vh;
    overflow: hidden;
    position: relative;
@@ -94,9 +94,9 @@ button {
 
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 4.95s;
+  -webkit-animation-duration: 5s;
   animation-name: fade;
-  animation-duration: 4.95s;
+  animation-duration: 5s;
 }
 
 @-webkit-keyframes fade {
@@ -268,6 +268,51 @@ footer {
    text-align: center;
 }
 
+/* DRUID - MEDIA QUERIES */
+/* ------------------------------------------------------------------------------------ */
+@media (max-width: 576px) {
+   .nav-intro {
+      grid-template-columns: 1fr;
+      right: 0;
+   }
+
+   #logo {
+      grid-area: 1 / 1 / 1 / 1;
+   }
+
+   .login-intro {
+      grid-area: 2 / 1 / 3 / 1;
+   }
+
+   .slogan {
+      right: 3rem;
+      margin-right: 0;
+   }
+
+   .news {
+      grid-template-columns: none;
+      grid-template-rows: auto auto;
+   }
+
+   .facts {
+      grid-template-columns: none;
+      grid-template-rows: auto auto;
+      text-align: center;
+   }
+
+   .footer-col {
+      grid-template-columns: none;
+      grid-template-rows: auto auto auto;
+      margin-bottom: 5rem;
+   }
+}
+
+@media (max-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
 
 /* PARAISO
 --------------------------------------------------------------------------------------- */
@@ -311,7 +356,7 @@ footer {
 
 /* - main.handlebars
 ----------------------------------------------- */
-#nav-intro {
+#nav-main {
    background-color: var(--wt);
    width: 100%;
    margin: 0 auto;
@@ -382,6 +427,10 @@ footer {
    margin-bottom: 5rem;
 }
 
+.comm-control .col {
+   text-align: center;
+}
+
 .comm-control p {
    text-align: center;
    margin-bottom: 3rem;
@@ -433,6 +482,39 @@ table {
 .table-body i {
    text-align: center;
 }
+
+
+/* add-to-menu.handlebars
+----------------------------------------------- */
+.add-to-menu h1 {
+   color: var(--wt);
+   margin-bottom: 3rem;
+   text-align: center;
+}
+
+.add-to-menu-form {
+   background-color: var(--wt);
+   width: 90%;
+   margin: 0 auto;
+   padding: 3rem;
+   border-radius: 1rem;
+   box-shadow: 0 0 12px 5px var(--or);
+}
+
+.add-to-menu-form input {
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   padding: 2rem;
+   margin-bottom: 2rem;
+}
+
+.add-to-menu-form .button-orange {
+   width: 10rem;
+   height: 5rem;
+   margin-top: 1rem;
+}
+
+
 
 /* MEDIA QUERIES */
 /* ------------------------------------------------------------------------------------ */
