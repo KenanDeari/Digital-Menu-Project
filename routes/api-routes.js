@@ -57,10 +57,26 @@ module.exports = app => {
 
   // POST
   app.post("/api/add-to-menu", (req, res) => {
-    db.Paraiso.create(req.body).then(dbParaiso => {
-      res.json(dbParaiso)
-    });
+    db.Paraiso.create({
+      section: req.body.section,
+      item: req.body.item,
+      descrip: req.body.descrip,
+      price: req.body.price
+    })
+      .then(() => {
+        res.redirect(307, "/api/view-menu");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+    console.log(res);
   });
+
+  // app.post("/api/add-to-menu", (req, res) => {
+  //   db.Paraiso.create(req.body).then(dbParaiso => {
+  //     res.json(dbParaiso)
+  //   });
+  // });
 
   // UPDATE
   app.put("/api/view-menu", (req, res) => {
