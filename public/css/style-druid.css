@@ -260,7 +260,7 @@ footer {
    background-color: var(--wt);
    border-radius: 2rem;
    padding: 2rem 1rem 2rem 2rem;
-   width: 15rem;
+   width: 20rem;
 }
 
 .rights {
@@ -320,16 +320,18 @@ footer {
 .button-red {
    text-align: center;
    align-self: center;
-   background-color: var(--br);
+   background-color: var(--dr);
    color: var(--wt);
+   max-width: 12rem;
+   width: 12rem;
+   padding: 1rem;
    border-radius: 1rem;
-   padding: 1rem 2rem;
    box-shadow: 0 2px 5px var(--bl);
 }
 
 .button-red:hover {
-   background-color: var(--or);
-   color: var(--bl);
+   background-color: var(--br);
+   color: var(--wt);
    transition: ease-in-out 0.5s;
 }
 
@@ -338,8 +340,10 @@ footer {
    align-self: center;
    background-color: var(--or);
    color: var(--bl);
+   max-width: 12rem;
+   width: 12rem;
+   padding: 1rem;
    border-radius: 1rem;
-   padding: 1rem 2rem;
    box-shadow: 0 2px 5px var(--bl);
 }
 
@@ -356,7 +360,7 @@ footer {
 
 /* - main.handlebars
 ----------------------------------------------- */
-#nav-main {
+.nav-main {
    background-color: var(--wt);
    width: 100%;
    margin: 0 auto;
