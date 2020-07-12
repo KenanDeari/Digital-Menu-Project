@@ -6,39 +6,6 @@ const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  // app.get("/", (req, res) => {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/intro-page.html"));
-  // });
-
-  // app.get("/index")
-
-  // app.get("/login", (req, res) => {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/login.html"));
-  // });
-
-  // app.get("/signup", (req, res) => {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/signup.html"));
-  // });
-
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../public/paraiso-comm-control.html"));
-  // });
-
-
 // PASSPORT
   app.get("/login", (req, res) => {
     if (req.user) {
@@ -76,7 +43,6 @@ module.exports = function(app) {
           }
         })
       }
-      // console.log(paraisoNew);
       res.render("view-menu", {
         menu: paraisoNew.menu
       })
@@ -87,11 +53,11 @@ module.exports = function(app) {
     res.render("paraiso-comm-control");
   });
 
-  app.get('/view-menu', (req, res) => {
+  app.get('/view-menu', isAuthenticated, (req, res) => {
     res.render('view-menu');
   });
 
-  app.get('/add-to-menu', (req, res) => {
+  app.get('/add-to-menu', isAuthenticated, (req, res) => {
     res.render('add-to-menu');
   });
 };
