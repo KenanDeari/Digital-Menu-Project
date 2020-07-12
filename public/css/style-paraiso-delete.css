@@ -65,17 +65,14 @@ button:hover {
 /* MAIN handlebars */
 /* ------------------------------------------------------------------------------------ */
 /* Nav ---------------------------------------- */
-nav {
-   width: 100%;
-   margin: 0 auto 5rem;
+.nav-paraiso {
+   margin-bottom: 5rem;
    padding: 2rem;
-   display: grid;
-   grid-template-columns: 3fr 1fr;
    border-bottom: 0.5rem var(--or) solid;
 }
 
 .logo {
-   width: 20rem;
+   max-width: 20rem;
 } 
 
 .logout {
@@ -83,8 +80,6 @@ nav {
    text-align: center;
    background-color: var(--br);
    color: var(--wt);
-   justify-self: center;
-   align-self: center;
    padding: 1.5rem 3rem;
    border-radius: 1rem;
    box-shadow: 0 0 8px 4px var(--wt);

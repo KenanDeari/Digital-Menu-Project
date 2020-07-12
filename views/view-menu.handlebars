@@ -1,48 +1,34 @@
-<main class="container">
+<main class="view-menu">
    <h1>Menu</h1>
 
-   <section class="table-view">
-      <div class="columns">
-         <p>id</p>
-      </div>
-      <div class="columns">
-         <p>Section</p>
-      </div>
-      <div class="columns">
-         <p>Items</p>
-      </div>
-      <div class="columns">
-         <p>Description</p>
-      </div>
-      <div class="columns">
-         <p>Price</p>
-      </div>
-      <div class="columns">
-         <p>Icons</p>
-      </div>
-   </section>
+   <section class="table-container">
+      <table class="table-stripped">
+         <thead class="table-title">
+            <tr>
+               <th><p>id</p></th>
+               <th><p>section</p></th>
+               <th><p>items</p></th>
+               <th><p>description</p></th>
+               <th><p>price</p></th>
+               <th><p>icons</p></th>
+            </tr>
+         </thead>
 
-   {{#each menu}}
-      <section class="table-view">
-         <div class="columns">
-            <p>{{id}}</p>
-         </div>
-         <div class="columns">
-            <p>{{section}}</p>
-         </div>
-         <div class="columns">
-            <p>{{item}}</p>
-         </div>
-         <div class="columns">
-            <p>{{descrip}}</p>
-         </div>
-         <div class="columns">
-            <p>{{price}}</p>
-         </div>
-         <div class="columns col-icons">
-            <a href=""><i class="far fa-edit fa-1x"></i></a>
-            <a href=""><i class="fas fa-trash fa-1x"></i></a>
-         </div>
-      </section>
-   {{/each}}
+         {{#each menu}}
+         <tbody class="table-body">
+            <tr>
+               <td><p>{{id}}</p></td>
+               <td><p>{{section}}</p></td>
+               <td><p>{{item}}</p></td>
+               <td><p>{{descrip}}</p></td>
+               <td><p>{{price}}</p></td>
+               <td>
+                  <a href=""><i class="far fa-edit fa-1x"></i></a>
+                  <a href=""><i class="fas fa-trash fa-1x"></i></a>
+               </td>
+            </tr>
+         </tbody>
+         {{/each}}
+      </table>
+   </section>
 </main>
