@@ -48,11 +48,6 @@ module.exports = app => {
   app.get("/api/view-menu", (req, res) => {
     db.Paraiso.findAll()
       .then(menu => {     
-      // res.json(menu);
-        // console.log(menu);
-      //   const menuData = {paraisoMenu: 
-            
-      // };
       res.render("view-menu", {
       menu
       })

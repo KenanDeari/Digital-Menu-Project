@@ -4,27 +4,27 @@ const db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { NONAME } = require("dns");
 
 module.exports = function(app) {
 // PASSPORT
   app.get("/login", (req, res) => {
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/view-menu");
     }
-    res.render("login")
+    res.render("login", {layout: "main-no-buttons"})
   })
 
   app.get("/signup", (req, res) => {
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/view-menu");
     }
-    res.render("signup");
+    res.render("signup", {layout: "main-no-buttons"});
   });
 
   // INTRO-PAGE
   app.get("/", (req, res) => {
-      res.render("intro-page", {
-    })
+      res.render("intro-page", {layout: "main-empty"})
   });
 
   // COMMAND CONTROL
@@ -47,10 +47,6 @@ module.exports = function(app) {
         menu: paraisoNew.menu
       })
     })
-  });
-  
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.render("paraiso-comm-control");
   });
 
   app.get('/view-menu', isAuthenticated, (req, res) => {
