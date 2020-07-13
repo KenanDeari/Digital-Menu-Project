@@ -13,9 +13,9 @@ $(document).ready(() => {
          price: priceInput.val().trim(),
       };
 
-      // if (!newItem.section || !newItem.item || !newItem.descrip || !newItem.price) {
-      //    return;
-      // }
+      if (!newItem.section || !newItem.item || !newItem.price) {
+         return;
+      }
       postItem(newItem.section, newItem.item, newItem.descrip, newItem.price);
       sectionInput.val("");
       itemInput.val("");
@@ -38,9 +38,9 @@ $(document).ready(() => {
       // });
    };
 
-   $(".delete-item").on("click", event => {
+   $(".delete-item").on("click", function(event) {
       event.preventDefault();
-      let id = $(this).menu("id");
+      let id = $(this).id;
       $.ajax("/api/menu-item/" + id, {
          type: "DELETE"
       }).then(() => {

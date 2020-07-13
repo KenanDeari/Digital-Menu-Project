@@ -82,13 +82,15 @@ module.exports = app => {
   });
 
   // DELETE
-  app.delete("/api/view-menu", (req, res) => {
-    db.Paraiso.findAll().then(menu => {
-      // res.json(menu);
-      res.render("add-to-menu", {
-
-      });
-    });
+  app.delete("/api/view-menu/:id", (req, res) => {
+    db.Paraiso.destroy({
+      where: {
+        id: req.body.id
+      }
+    })
+      .then(() => {
+        res.redirect(307, "/api/view-menu");
+      })
   });
 };
 

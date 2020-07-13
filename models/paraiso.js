@@ -1,5 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
   const Paraiso = sequelize.define("Paraiso", {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     section: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,7 +26,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       len: [1, 10]
-    }
+    },
+    createdAt: { type: DataTypes.DATE },
+    updatedAt: { type: DataTypes.DATE }
   }, {
     freezeTableName: true
   });
