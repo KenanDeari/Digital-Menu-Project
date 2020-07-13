@@ -13,7 +13,7 @@ $(document).ready(() => {
          price: priceInput.val().trim(),
       };
 
-      if (!newItem.section || !newItem.item || !newItem.descrip || !newItem.price) {
+      if (!newItem.section || !newItem.item || !newItem.price) {
          return;
       }
       postItem(newItem.section, newItem.item, newItem.descrip, newItem.price);
@@ -31,17 +31,16 @@ $(document).ready(() => {
          price: price,
       })
          .then(() => {
-            console.log("Created new item");
-            window.location.replace("/api/view-menu");
+            window.location.replace("/view-menu");
          })
-         .catch(err => {
-            console.log(err);
-      });
+         // .catch(err => {
+         //    console.log(err);
+      // });
    };
 
-   $(".delete-item").on("click", event => {
+   $(".delete-item").on("click", function(event) {
       event.preventDefault();
-      let id = $(this).menu("id");
+      let id = $(this).id;
       $.ajax("/api/menu-item/" + id, {
          type: "DELETE"
       }).then(() => {

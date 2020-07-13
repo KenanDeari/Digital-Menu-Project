@@ -28,10 +28,8 @@ module.exports = function(app) {
   });
 
   // COMMAND CONTROL
-  app.get("/view-menu", (req, res) => {
+  app.get("/view-menu", isAuthenticated, (req, res) => {
     db.Paraiso.findAll().then(menu => {
-      // res.json(menu)
-      // console.log(menu);
       const paraisoNew = {
         menu: menu.map(item => {
           return {
@@ -39,21 +37,28 @@ module.exports = function(app) {
             section: item.section,
             item: item.item,
             descrip: item.descrip,
-            price: item.price
+            price: item.price,
+            createdAt: item.createdAt,
+            updatedAt: item.updatedAt
           }
         })
       }
       res.render("view-menu", {
         menu: paraisoNew.menu
       })
+
     })
   });
 
-  app.get('/view-menu', isAuthenticated, (req, res) => {
-    res.render('view-menu');
-  });
+  // app.get("/view-menu", isAuthenticated, (req, res) => {
+  //   res.render('view-menu');
+  // });
 
-  app.get('/add-to-menu', isAuthenticated, (req, res) => {
+  app.get("/add-to-menu", isAuthenticated, (req, res) => {
     res.render('add-to-menu');
   });
+
+  app.post("/add-to-menu", isAuthenticated, (req, res) => {
+    res.render("/view-menu");  
+  })
 };
