@@ -69,14 +69,7 @@ module.exports = app => {
       .catch(err => {
         res.status(401).json(err);
       });
-    console.log(res);
   });
-
-  // app.post("/api/add-to-menu", (req, res) => {
-  //   db.Paraiso.create(req.body).then(dbParaiso => {
-  //     res.json(dbParaiso)
-  //   });
-  // });
 
   // UPDATE
   app.put("/api/view-menu", (req, res) => {

@@ -13,9 +13,9 @@ $(document).ready(() => {
          price: priceInput.val().trim(),
       };
 
-      if (!newItem.section || !newItem.item || !newItem.descrip || !newItem.price) {
-         return;
-      }
+      // if (!newItem.section || !newItem.item || !newItem.descrip || !newItem.price) {
+      //    return;
+      // }
       postItem(newItem.section, newItem.item, newItem.descrip, newItem.price);
       sectionInput.val("");
       itemInput.val("");
@@ -31,12 +31,11 @@ $(document).ready(() => {
          price: price,
       })
          .then(() => {
-            console.log("Created new item");
-            window.location.replace("/api/view-menu");
+            window.location.replace("/view-menu");
          })
-         .catch(err => {
-            console.log(err);
-      });
+         // .catch(err => {
+         //    console.log(err);
+      // });
    };
 
    $(".delete-item").on("click", event => {
