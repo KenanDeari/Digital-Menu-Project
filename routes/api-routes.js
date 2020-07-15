@@ -45,15 +45,39 @@ module.exports = app => {
 
   // Paraiso Routes -----------------------------------------------------------
   // GET
+  // app.get("/api/view-menu", (req, res) => {
+  //   db.Paraiso.findAll()
+  //     .then(menu => {     
+  //     res.render("/api/view-menu", {
+  //     menu
+  //     })
+  //   })
+  //   .catch(err => console.log(err));
+  // });
+
+  // GET
   app.get("/api/view-menu", (req, res) => {
     db.Paraiso.findAll()
       .then(menu => {     
-      res.render("view-menu", {
-      menu
-      })
+      res.send(menu)
     })
     .catch(err => console.log(err));
   });
+
+  // GET ONE
+  app.get("/api/view-menu/:id", (req, res) => {
+    db.Paraiso.findAll({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(menu => {     
+      res.send(menu)
+    })
+    .catch(err => console.log(err));
+  });
+
+
 
   // POST
   app.post("/api/add-to-menu", (req, res) => {
@@ -64,7 +88,8 @@ module.exports = app => {
       price: req.body.price
     })
       .then(() => {
-        res.redirect(307, "/api/view-menu");
+         res.redirect(307, "/view-menu");
+        // res.status(200);
       })
       .catch(err => {
         res.status(401).json(err);
@@ -75,24 +100,55 @@ module.exports = app => {
   app.put("/api/view-menu", (req, res) => {
     db.Paraiso.findAll().then(menu => {
       // res.json(menu);
-      res.render("add-to-menu", {
+      res.render("/api/add-to-menu", {
 
       });
     });
   });
-
+  console.log(db.Paraiso.id);
   // DELETE
   app.delete("/api/view-menu/:id", (req, res) => {
     db.Paraiso.destroy({
       where: {
-        id: req.body.id
+        id: $(this).id
       }
-    })
-      .then(() => {
-        res.redirect(307, "/api/view-menu");
+    }).then(function(dbParaiso) {
+      res.json(dbParaiso);
+    });
+  });
+
+  // app.delete("/api/view-menu/:id", (req, res, next) => {
+  //   db.Paraiso.destroy({
+  //     where: {
+  //       // id: req.body.id,
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(db.Paraiso.findById(req.params.id))
+  //     .then(() => {
+  //       res.redirect(307, "/api/view-menu");
+  //     })
+  // });
+
+  // UPDATE
+  app.put("/api/view-menu/:id", (req, res) => {
+    db.Paraiso.update(
+      {
+        section: req.body.section,
+        item: req.body.item,
+        descrip: req.body.descrip,
+        price: req.body.price
+      },
+      {
+        WHERE: req.params.id
       })
+      .then(db.Paraiso.findById(req.params.id))
+      .then(dbParaiso => {
+        res.json(dbParaiso)
+      });
   });
 };
+
 
   // POST
   // app.post("/api/paraiso", (req, res) => {

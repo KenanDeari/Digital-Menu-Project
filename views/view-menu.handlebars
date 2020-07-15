@@ -17,14 +17,14 @@
          {{#each menu}}
          <tbody class="table-body">
             <tr>
-               <td><p>{{id}}</p></td>
+               <td><p class="table-center">{{id}}</p></td>
                <td><p>{{section}}</p></td>
                <td><p>{{item}}</p></td>
                <td><p>{{descrip}}</p></td>
-               <td><p>{{price}}</p></td>
-               <td>
-                  <a href=""><i class="far fa-edit fa-1x"></i></a>
-                  <a href=""><i class="fas fa-trash fa-1x delete-item"></i></a>
+               <td><p class="table-center">{{price}}</p></td>
+               <td class="table-center">
+                  <a href=""><i class="far fa-edit fa-1x update-item" data-id="{{this.id}}"></i></a>
+                  <a href=""><i class="fas fa-trash fa-1x delete-item" data-id="{{this.id}}"></i></a>
                </td>
             </tr>
          </tbody>

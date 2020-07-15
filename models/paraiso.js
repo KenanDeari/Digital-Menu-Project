@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     item: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: [1, 60]
     },
     descrip: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     price: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       len: [1, 10]
     },
     createdAt: { type: DataTypes.DATE },

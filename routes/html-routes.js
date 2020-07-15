@@ -58,7 +58,7 @@ module.exports = function(app) {
     res.render('add-to-menu');
   });
 
-  app.post("/add-to-menu", isAuthenticated, (req, res) => {
-    res.render("/view-menu");  
-  })
+  // app.post("/add-to-menu", isAuthenticated, (req, res) => {
+  //   res.render("view-menu");  
+  // })
 };
