@@ -97,40 +97,16 @@ module.exports = app => {
   });
 
   // UPDATE
-  app.put("/api/view-menu", (req, res) => {
-    db.Paraiso.findAll().then(menu => {
-      // res.json(menu);
-      res.render("/api/add-to-menu", {
+  // app.put("/api/view-menu", (req, res) => {
+  //   db.Paraiso.findAll().then(menu => {
+  //     // res.json(menu);
+  //     res.render("/api/add-to-menu", {
 
-      });
-    });
-  });
-  console.log(db.Paraiso.id);
-  // DELETE
-  app.delete("/api/view-menu/:id", (req, res) => {
-    db.Paraiso.destroy({
-      where: {
-        id: $(this).id
-      }
-    }).then(function(dbParaiso) {
-      res.json(dbParaiso);
-    });
-  });
-
-  // app.delete("/api/view-menu/:id", (req, res, next) => {
-  //   db.Paraiso.destroy({
-  //     where: {
-  //       // id: req.body.id,
-  //       id: req.params.id
-  //     }
-  //   })
-  //     .then(db.Paraiso.findById(req.params.id))
-  //     .then(() => {
-  //       res.redirect(307, "/api/view-menu");
-  //     })
+  //     });
+  //   });
   // });
 
-  // UPDATE
+    // UPDATE
   app.put("/api/view-menu/:id", (req, res) => {
     db.Paraiso.update(
       {
@@ -140,14 +116,28 @@ module.exports = app => {
         price: req.body.price
       },
       {
-        WHERE: req.params.id
+        where: {
+          id: req.params.id
+        }
       })
-      .then(db.Paraiso.findById(req.params.id))
+      // .then(db.Paraiso.findById(req.params.id))
       .then(dbParaiso => {
         res.json(dbParaiso)
       });
   });
+
+  // DELETE
+  app.delete("/api/view-menu/:id", (req, res) => {
+    db.Paraiso.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbParaiso) {
+      res.json(dbParaiso);
+    });
+  });
 };
+
 
 
   // POST
