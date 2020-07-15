@@ -126,14 +126,13 @@ button {
 }
 
 #logo {
+   width: 25rem;
    grid-area: 1 / 2 / 2 / 3;
    background-color: rgba(242, 242, 242, 0.85);
    padding: 2rem 1rem 2rem 2rem;
    border-radius: 1rem;
    box-shadow: 0 0 8px var(--wt);
 }
-
-#logo img {width: 25rem;}
 
 .login-intro {
    font-size: 2rem;
@@ -377,6 +376,7 @@ footer {
 /* login.handlebars and signup.handlebars
 ----------------------------------------------- */
 .login-form {
+   width: 60%;
    background-color: var(--wt);
    border-radius: 1rem;
    padding: 3rem;
@@ -470,6 +470,14 @@ table {
    background-color: var(--wt);
 }
 
+table tr {
+   border-bottom: 2px solid  rgba(242, 183, 5, 0.25);
+}
+
+table td:nth-child(even) {
+   background-color: rgba(242, 183, 5, 0.1);
+}
+
 .table-title p {
    text-align: center;
    margin: 0;
@@ -480,7 +488,12 @@ table {
    font-size: 1.25rem;
    margin: 0;
    padding: 0.5rem;
-   border-bottom: 1px solid var(--or);
+   /* border-bottom: 1px solid var(--or); */
+}
+
+.table-center {
+   text-align: center;
+   align-self: end;
 }
 
 .table-body i {
@@ -522,10 +535,20 @@ table {
 
 /* MEDIA QUERIES */
 /* ------------------------------------------------------------------------------------ */
-@media (min-width: 576px) {}
+@media (max-width: 576px) {
+   .login-form {
+      width: 85%;
+   }
+}
+
 @media (min-width: 768px) {}
 @media (min-width: 992px) {}
-@media (min-width: 1200px) {}
+
+@media (min-width: 1200px) {
+   .login-form {
+      width: 40%;
+   }
+}
 
 
 /* FONTS */

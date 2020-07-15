@@ -1,10 +1,11 @@
 $(document).ready(() => {
-   $("form.new-item").on("submit", event => {
+   // POST
+   $(".new-item").on("submit", event => {
       event.preventDefault();
-      const sectionInput = $("input#section");
-      const itemInput = $("input#item");
-      const descripInput = $("input#descrip");
-      const priceInput = $("input#price");
+      const sectionInput = $("#section");
+      const itemInput = $("#item");
+      const descripInput = $("#descrip");
+      const priceInput = $("#price");
 
       const newItem = {
          section: sectionInput.val().trim(),
@@ -33,21 +34,48 @@ $(document).ready(() => {
          .then(() => {
             window.location.replace("/view-menu");
          })
-         // .catch(err => {
-         //    console.log(err);
-      // });
+         .catch(err => {
+            console.log(err);
+      });
    };
 
-   $(".delete-item").on("click", function(event) {
-      event.preventDefault();
-      let id = $(this).id;
-      $.ajax("/api/menu-item/" + id, {
-         type: "DELETE"
-      }).then(() => {
-         console.log("Delete item", id);
-         location.reload();
-      });
-   });
+   $(".update-item").on("click", function (event) {
+      
+   })
+
+   // $(".delete-item").on("click", function(event, req) {
+   //    event.preventDefault();
+   //    let id = req.params.id;
+   //    $.ajax("/api/menu-item/" + id, {
+   //       type: "DELETE"
+   //    }).then(() => {
+   //       console.log("Delete item", id);
+   //       location.reload();
+   //    });
+   // });
+
+   $(document).on("click", ".delete-item", trashCan);
+
+   function trashCan() {
+   //  var listItemData = $(this).parent("td").parent("tr").data("author");
+    let id = $(this).id;
+    $.ajax({
+      method: "DELETE",
+      url: "/api/view-menu/" + id
+    })
+      // .then(view-menu);
+  }
+   //    $(".delete-item").on("click", function (event) {
+   //    event.preventDefault();
+   //    let del = `id = ${req.params.id}`;
+   //    para.delete(del, result => {
+   //       if (result.affectedRows == 0) {
+   //          return res.status(404).end();
+   //       } else {
+   //          res.status(200).end();
+   //       }
+   //    })
+   // });
 });
 
 //    $(document).on("submit", ".add-item", function(event) {

@@ -8,6 +8,7 @@ CREATE TABLE Paraiso (
    item VARCHAR(100) NOT NULL,
    descrip VARCHAR(500) NULL,
    price INT,
+   deleted BOOLEAN DEFAULT false,
    createdAt DATE,
    updatedAt DATE,
    PRIMARY KEY (id)
