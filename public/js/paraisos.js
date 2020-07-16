@@ -56,8 +56,15 @@ $(document).ready(() => {
          }
       }).then(function () {
          console.log(`Updated item ${id}`);
-         // location.reload();
       });
+   });
+   
+   
+   
+   // Modal Save Button
+   $(".save").on("click", () => {
+      $(".modal-bg").removeClass("modal-active")
+      location.reload();
    });
 
    // Modal Cancel Button
