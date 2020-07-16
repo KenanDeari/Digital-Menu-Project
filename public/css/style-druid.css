@@ -321,6 +321,9 @@ footer {
    align-self: center;
    background-color: var(--dr);
    color: var(--wt);
+   max-height: 4rem;
+   height: 4rem;
+   min-width: 12rem;
    max-width: 12rem;
    width: 12rem;
    padding: 1rem;
@@ -339,6 +342,9 @@ footer {
    align-self: center;
    background-color: var(--or);
    color: var(--bl);
+   max-height: 4rem;
+   height: 4rem;
+   min-width: 12rem;
    max-width: 12rem;
    width: 12rem;
    padding: 1rem;
@@ -488,7 +494,6 @@ table td:nth-child(even) {
    font-size: 1.25rem;
    margin: 0;
    padding: 0.5rem;
-   /* border-bottom: 1px solid var(--or); */
 }
 
 .table-center {
@@ -499,6 +504,46 @@ table td:nth-child(even) {
 .table-body i {
    text-align: center;
 }
+
+.modal-bg {
+   background-color: rgba(50, 50, 50, 0.9);
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0s, opacity 0.5s;
+}
+
+.modal-active {
+   visibility: visible;
+   opacity: 1;
+}
+
+/* .modal-hidden {
+   display: none;
+} */
+
+.modal .button-orange {
+   margin-right: 3rem;
+}
+
+.modal input {
+   font-family: 'Aleo', serif;
+   font-size: 2rem;
+   padding: 2rem;
+}
+
+.modal input::placeholder {
+   font-family: 'Aleo', serif;
+   font-size: 1.75rem;
+}
+
 
 
 /* add-to-menu.handlebars
@@ -519,16 +564,13 @@ table td:nth-child(even) {
 }
 
 .add-to-menu-form input {
-   font-family: 'Aleo', serif;
-   font-size: 2rem;
-   padding: 2rem;
    margin-bottom: 2rem;
+   padding: 2rem;
 }
 
 .add-to-menu-form .button-orange {
-   width: 10rem;
-   height: 5rem;
-   margin-top: 1rem;
+   width: 12rem;
+   height: 4rem;
 }
 
 
