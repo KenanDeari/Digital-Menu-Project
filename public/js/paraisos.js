@@ -39,11 +39,14 @@ $(document).ready(() => {
       });
    };
 
-   $(".update-item").on("click", function (event) {
+   // PUT (Update)
+   // Modal
+   $(".update-item").on("click", function(event) {
       event.preventDefault();
+      $(".modal-bg").addClass("modal-active");
       let id = $(this).data("id");
       $.ajax({
-         url: "/api/view-menu/" + id,
+         url: `/api/view-menu/ ${id}`,
          type: "PUT",
          data: {
             section: $(this).data("section"),
@@ -52,19 +55,52 @@ $(document).ready(() => {
             price: $(this).data("price")
          }
       }).then(function () {
-         console.log("Updated item", id);
-         location.reload();
+         console.log(`Updated item ${id}`);
       });
    });
+   
+   
+   
+   // Modal Save Button
+   $(".save").on("click", () => {
+      $(".modal-bg").removeClass("modal-active")
+      location.reload();
+   });
 
+   // Modal Cancel Button
+   $(".cancel").on("click", () => {
+      $(".modal-bg").removeClass("modal-active")
+   });
+
+
+   // DELETE
    $(".delete-item").on("click", function (event) {
       event.preventDefault();
       let id = $(this).data("id");
-      $.ajax("/api/view-menu/" + id, {
+      $.ajax(`/api/view-menu/ ${id}`, {
          type: "DELETE"
       }).then(function () {
-         console.log("Deleted item", id);
+         console.log(`Deleted item ${ id }`);
          location.reload();
       });
    });
 });
+
+
+ // $(".update-item").on("click", function (event) {
+   //    event.preventDefault();
+   //    let id = $(this).data("id");
+   //    $.ajax({
+   //       url: "/api/view-menu/" + id,
+   //       type: "PUT",
+   //       data: {
+   //          section: $(this).data("section"),
+   //          item: $(this).data("item"),
+   //          descrip: $(this).data("descrip"),
+   //          price: $(this).data("price")
+   //       }
+   //    }).then(function () {
+   //       console.log("Updated item", id);
+   //       location.reload();
+   //    });
+   // });

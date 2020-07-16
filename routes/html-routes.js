@@ -36,28 +36,43 @@ module.exports = function(app) {
             section: item.section,
             item: item.item,
             descrip: item.descrip,
-            price: item.price,
-            createdAt: item.createdAt,
-            updatedAt: item.updatedAt
+            price: item.price
           }
         })
       }
       res.render("view-menu", {
         menu: paraisoNew.menu
       })
-
-    })
+    });
   });
-
-  // app.get("/view-menu", isAuthenticated, (req, res) => {
-  //   res.render('view-menu');
-  // });
 
   app.get("/add-to-menu", isAuthenticated, (req, res) => {
     res.render('add-to-menu');
   });
 
-  // app.post("/add-to-menu", isAuthenticated, (req, res) => {
-  //   res.render("view-menu");  
-  // })
+  // Update Form
+  app.get("/view-menu/:id", (req, res) => {
+    db.Paraiso.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(menu => {
+      const paraisoUpdate = {
+        menu: menu.map(item => {
+          return {
+            // id: item.id,
+            section: item.section,
+            item: item.item,
+            descrip: item.descrip,
+            price: item.price
+          }
+        })
+      }
+      res.render("view-menu", {
+        menu: paraisoUpdate.menu
+      })
+    });
+  });
+
+  
 };

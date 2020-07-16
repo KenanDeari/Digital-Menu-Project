@@ -44,18 +44,7 @@ module.exports = app => {
   });
 
   // Paraiso Routes -----------------------------------------------------------
-  // GET
-  // app.get("/api/view-menu", (req, res) => {
-  //   db.Paraiso.findAll()
-  //     .then(menu => {     
-  //     res.render("/api/view-menu", {
-  //     menu
-  //     })
-  //   })
-  //   .catch(err => console.log(err));
-  // });
-
-  // GET
+   // GET
   app.get("/api/view-menu", (req, res) => {
     db.Paraiso.findAll()
       .then(menu => {     
@@ -64,24 +53,10 @@ module.exports = app => {
     .catch(err => console.log(err));
   });
 
-  // GET ONE
-  app.get("/api/view-menu/:id", (req, res) => {
-    db.Paraiso.findAll({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(menu => {     
-      res.send(menu)
-    })
-    .catch(err => console.log(err));
-  });
-
-
-
   // POST
   app.post("/api/add-to-menu", (req, res) => {
     db.Paraiso.create({
+      id: req.body.id,
       section: req.body.section,
       item: req.body.item,
       descrip: req.body.descrip,
@@ -89,27 +64,18 @@ module.exports = app => {
     })
       .then(() => {
          res.redirect(307, "/view-menu");
-        // res.status(200);
+        res.status(200);
       })
       .catch(err => {
         res.status(401).json(err);
       });
   });
 
-  // UPDATE
-  // app.put("/api/view-menu", (req, res) => {
-  //   db.Paraiso.findAll().then(menu => {
-  //     // res.json(menu);
-  //     res.render("/api/add-to-menu", {
-
-  //     });
-  //   });
-  // });
-
     // UPDATE
   app.put("/api/view-menu/:id", (req, res) => {
     db.Paraiso.update(
       {
+        id: req.body.id,
         section: req.body.section,
         item: req.body.item,
         descrip: req.body.descrip,
@@ -120,7 +86,6 @@ module.exports = app => {
           id: req.params.id
         }
       })
-      // .then(db.Paraiso.findById(req.params.id))
       .then(dbParaiso => {
         res.json(dbParaiso)
       });
@@ -132,7 +97,7 @@ module.exports = app => {
       where: {
         id: req.params.id
       }
-    }).then(function(dbParaiso) {
+    }).then(dbParaiso => {
       res.json(dbParaiso);
     });
   });
