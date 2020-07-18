@@ -34,8 +34,6 @@
   <img src="https://img.shields.io/badge/Contents%20-orange"/></>
   <a> 
 
-**[Installation](.Installation)**<br>
-**[Usage](.Usage)**<br>
 **[License](.License)**</br>
 **[Contributors](.Contributors)**<br>
 **[Tests](.Tests)**<br>
@@ -47,12 +45,6 @@
 <a>
   <img src="https://img.shields.io/badge/Installation%20Procedure%20-yellow"/></>
   <a> 
-
-1. npm install
-
-1. node server.js (runs application on local computer.) 
-
-
 
 <hr>
 
