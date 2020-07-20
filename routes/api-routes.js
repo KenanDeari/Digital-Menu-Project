@@ -63,8 +63,8 @@ module.exports = app => {
       price: req.body.price
     })
       .then(() => {
-         res.redirect(307, "/view-menu");
-        res.status(200);
+        // res.redirect(307, "/view-menu");
+        res.status(200).send();
       })
       .catch(err => {
         res.status(401).json(err);
