@@ -1,9 +1,6 @@
 
 <h1 align="center">DruiD Restaurant Interface</h1>
 <p align="center" margin="150px">
-  <a>
-    <img src="public/img/readMeLogo.jpg"/></>
-    <a>
 
  </p>
 
